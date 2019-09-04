@@ -38,7 +38,7 @@ class BasicoPage extends StatelessWidget {
       child: FadeInImage(
         image: NetworkImage('https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg'),
         placeholder: AssetImage('assets/img/loading.gif'),
-        height: 190.0,
+        height: 200.0,
         fit: BoxFit.cover
       ),
     );
@@ -47,7 +47,7 @@ class BasicoPage extends StatelessWidget {
   Widget _crearTitulo() {
     return SafeArea(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 30.0),
         child: Row(
           children: <Widget>[
             
