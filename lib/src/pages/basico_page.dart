@@ -11,32 +11,9 @@ class BasicoPage extends StatelessWidget {
       body: Column(
         children: <Widget>[
 
-          Image(
-            image: NetworkImage('https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg'),
-          ),
+          _crearImagen(),
 
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-            child: Row(
-              children: <Widget>[
-                
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Cascada de agua', style: estiloTitulo,),
-                      SizedBox(height: 7.0),
-                      Text('La cascada se encuantra en alemania', style: estiloSubtitulo),
-                    ],
-                  ),
-                ),
-
-                Icon(Icons.star, color: Colors.red, size: 30.0),
-
-                Text('41', style: TextStyle(fontSize: 20.0))
-              ],
-            ),
-          )
+          _crearTitulo(),
         ],
       )
     );
@@ -44,6 +21,33 @@ class BasicoPage extends StatelessWidget {
 
 
   Widget _crearImagen() {
-    
+    return Image(
+      image: NetworkImage('https://i.ytimg.com/vi/BfCwN4iy6T8/maxresdefault.jpg'),
+    );
+  }
+
+  Widget _crearTitulo() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+      child: Row(
+        children: <Widget>[
+          
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text('Cascada de agua', style: estiloTitulo,),
+                SizedBox(height: 7.0),
+                Text('La cascada se encuantra en alemania', style: estiloSubtitulo),
+              ],
+            ),
+          ),
+
+          Icon(Icons.star, color: Colors.red, size: 30.0),
+
+          Text('41', style: TextStyle(fontSize: 20.0))
+        ],
+      ),
+    );
   }
 }
