@@ -46,7 +46,22 @@ class ScrollPage extends StatelessWidget {
   }
 
   Widget _pagina2() {
-    return _colorFondo();
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      color: Color.fromRGBO(39, 44, 77, 1.0),
+      child: Center(
+        child: RaisedButton(
+          shape: StadiumBorder(),
+          color: Colors.blue,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+            child: Text('Bienvenidos', style: TextStyle(fontSize: 20.0, color: Colors.white)),
+          ),
+          onPressed: () {},
+        ),
+      ),
+    );
   }
 
   Widget _textos() {
