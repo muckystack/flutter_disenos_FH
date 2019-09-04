@@ -36,7 +36,7 @@ class BasicoPage extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Image(
-        image: AssetImage('assets/img/baner.jpg'),
+        image: AssetImage('assets/img/baner.png'),
         height: 200.0,
         fit: BoxFit.cover,
       ),
