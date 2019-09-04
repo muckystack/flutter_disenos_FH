@@ -12,8 +12,10 @@ class BasicoPage extends StatelessWidget {
         children: <Widget>[
 
           _crearImagen(),
-
           _crearTitulo(),
+          _crearAcciones(),
+          _crearTexto()
+
         ],
       )
     );
@@ -47,6 +49,37 @@ class BasicoPage extends StatelessWidget {
 
           Text('41', style: TextStyle(fontSize: 20.0))
         ],
+      ),
+    );
+  }
+
+  Widget _crearAcciones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        _accion(Icons.call, 'CALL'),
+        _accion(Icons.router, 'ROUTE'),
+        _accion(Icons.share, 'SHARE'),
+      ],
+    );
+  }
+
+  Widget _accion(IconData icon, String texto) {
+    return Column(
+      children: <Widget>[
+        Icon(icon, color: Colors.blue, size: 40.0),
+        SizedBox(height: 5.0),
+        Text(texto, style: TextStyle(fontSize: 15.0, color: Colors.blue))
+      ],
+    );
+  }
+
+  Widget _crearTexto() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+      child: Text(
+        'Widget _accion(IconData icon, String texto) {    return Column(      children: <Widget>[        Icon(icon, color: Colors.blue, size: 40.0),        SizedBox(height: 5.0),        Text(texto, style: TextStyle(fontSize: 15.0, color: Colors.blue))      ],    );  }'
+        textAlign: TextAlign.justify,
       ),
     );
   }
