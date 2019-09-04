@@ -41,4 +41,9 @@ class BasicoPage extends StatelessWidget {
       )
     );
   }
+
+
+  Widget _crearImagen() {
+    
+  }
 }
