@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_disenos_fh/src/pages/botones_page.dart';
+import 'package:flutter_disenos_fh/src/pages/scroll_page.dart';
 
 class BasicoPage extends StatelessWidget {
 
@@ -8,25 +10,31 @@ class BasicoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
+      body: PageView(
+        children: <Widget>[
+          SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
 
-            _crearImagen(),
-            _crearTitulo(),
-            _crearAcciones(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
-            _crearTexto(),
+                _crearImagen(),
+                _crearTitulo(),
+                _crearAcciones(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
+                _crearTexto(),
 
-          ],
-        ),
+              ],
+            ),
+          ),
+          ScrollPage(),
+          BotonesPage()
+        ],
       )
     );
   }
