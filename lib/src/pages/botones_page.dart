@@ -128,26 +128,26 @@ class BotonesPage extends StatelessWidget {
       children: [
         TableRow(
           children: [
-            _crearBotonRedondeado(),
-            _crearBotonRedondeado()
+            _crearBotonRedondeado(Colors.blue, Icons.border_all, 'Bordes'),
+            _crearBotonRedondeado(Colors.pinkAccent, Icons.directions_bus, 'Dirección')
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado(),
-            _crearBotonRedondeado()
+            _crearBotonRedondeado(Colors.purpleAccent, Icons.shop, 'Compras'),
+            _crearBotonRedondeado(Colors.orange, Icons.insert_drive_file, 'Insertar archivo')
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado(),
-            _crearBotonRedondeado()
+            _crearBotonRedondeado(Colors.blueAccent, Icons.file_download, 'Descargar archivo'),
+            _crearBotonRedondeado(Colors.blueGrey, Icons.indeterminate_check_box, 'Votación')
           ]
         ),
         TableRow(
           children: [
-            _crearBotonRedondeado(),
-            _crearBotonRedondeado()
+            _crearBotonRedondeado(Colors.redAccent, Icons.collections, 'Colecciones'),
+            _crearBotonRedondeado(Colors.teal, Icons.help_outline, 'Ayuda')
           ]
         ),
       ],
@@ -155,30 +155,36 @@ class BotonesPage extends StatelessWidget {
 
   }
 
-  Widget _crearBotonRedondeado() {
+  Widget _crearBotonRedondeado(Color color, IconData icono, String texto) {
 
     return Container(
       height: 180.0,
-      margin: EdgeInsets.all(20.0),
+      margin: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: Color.fromRGBO(62, 66, 107, 0.7),
         borderRadius: BorderRadius.circular(20.0)
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          SizedBox(height: 5.0),
-          CircleAvatar(
-            backgroundColor: Colors.pinkAccent,
-            radius: 35.0,
-            child: Icon(Icons.swap_calls, color: Colors.white, size: 30.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: BackdropFilter(
+          filter: prefix0.ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              SizedBox(height: 5.0),
+              CircleAvatar(
+                backgroundColor: color,
+                radius: 35.0,
+                child: Icon(icono, color: Colors.white, size: 30.0),
+              ),
+              Text(
+                texto,
+                style: TextStyle(color: color),
+              ),
+              SizedBox(height: 5.0),
+            ],
           ),
-          Text(
-            'Cosa',
-            style: TextStyle(color: Colors.pinkAccent),
-          ),
-          SizedBox(height: 5.0),
-        ],
+        ),
       ),
     );
 
